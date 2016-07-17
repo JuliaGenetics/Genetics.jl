@@ -1,5 +1,10 @@
 using Genetics
 using Base.Test
 
-# write your own tests here
-@test 1 == 1
+si = SnpInfo(["1"; "2"], [1; 1], [Int8(1); Int32(2)], [1; 1], [2; 2])
+
+@test typeof(si.snpid[1]) <: AbstractString
+@test typeof(si.chrom[1]) <: Integer
+@test typeof(si.pos[1]) <: Integer
+@test typeof(si.allele0[1]) <: Integer
+@test typeof(si.allele1[1]) <: Integer
