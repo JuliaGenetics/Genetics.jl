@@ -11,13 +11,13 @@ type SnpInfo{
         T<:Integer,
         A<:Union{AbstractString, Integer} 
     }
-	
-    snpid::Vector{S}
-	chrom::Vector{C}
-	pos::Vector{T}
-	allele0::Vector{A}
-	allele1::Vector{A}
     
+    snpid::Vector{S}
+    chrom::Vector{C}
+    pos::Vector{T}
+    allele0::Vector{A}
+    allele1::Vector{A}
+
 end
 
 
@@ -25,9 +25,9 @@ end
 
 type SnpMatrix
     
-	data::SnpData
-	info::SnpInfo
-	# is the data phased or not (=unphased)
-	phased::Bool
+    data::SnpData
+    info::SnpInfo
+    # is the data phased or not (=unphased)
+    phased::Bool
     
 end
