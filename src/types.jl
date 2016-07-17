@@ -19,8 +19,8 @@ type LocusInfo{
     locusid::Vector{S}
     chrom::Vector{C}
     pos::Vector{T}
-    allele0::Vector{A}
     allele1::Vector{A}
+    allele2::Vector{A}
 
 end
 
