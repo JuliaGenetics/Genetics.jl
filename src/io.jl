@@ -30,7 +30,7 @@ function read_vcf(path::AbstractString, as = SnpMatrix)
             end
             nsnps += 1
         elseif (length(line) >= 45 && line[1:45] == cols_fix)
-            cols = split(line, sep)
+            cols = split(chomp(line), sep)
             ninds = length(cols) - 9
         end
     end
@@ -60,7 +60,7 @@ function read_vcf(path::AbstractString, as = SnpMatrix)
         if (length(line) <= 1)
             continue
         elseif (line[1] != '#')
-            fields = split(line, sep)
+            fields = split(chomp(line), sep)
             # skip SNP3+, INDEL
             if ( length(fields[5]) == 1 && length(fields[4]) == 1 )
                 isnp += 1
