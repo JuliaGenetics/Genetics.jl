@@ -1,18 +1,22 @@
 ### SnpData - SNP allele data, [ind x snp] array
 
 typealias SnpData Matrix{Int8}
+# code unphased, biallelic
+#   0 = NA
+#   1 = AA
+#   2 = AB | BA
+#   3 = BB
 
+### LocusInfo - Locus attributes
 
-### SnpInfo - SNP information
-
-type SnpInfo{
+type LocusInfo{
         S<:Union{AbstractString, Integer}, 
         C<:Union{AbstractString, Integer}, 
         T<:Integer,
         A<:Union{AbstractString, Integer} 
     }
     
-    snpid::Vector{S}
+    locusid::Vector{S}
     chrom::Vector{C}
     pos::Vector{T}
     allele0::Vector{A}
@@ -23,11 +27,12 @@ end
 
 ### SnpMatrix - SNP data and information
 
-type SnpMatrix
+type SnpMatrix{
+        I<:Union{AbstractString, Integer}
+    }
     
     data::SnpData
-    info::SnpInfo
-    # is the data phased or not (=unphased)
-    phased::Bool
+    locus::LocusInfo
+    individual::Vector{I}
     
 end
