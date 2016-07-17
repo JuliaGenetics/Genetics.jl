@@ -1,5 +1,9 @@
 module Genetics
 
-# package code goes here
+    include("types.jl")
+
+    export
+        SnpMatrix,
+        SnpInfo
 
 end # module
