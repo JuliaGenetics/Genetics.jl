@@ -5,7 +5,7 @@ module Genetics
 
     export
         SnpMatrix,
-        SnpInfo,
+        LocusInfo,
 
         read_vcf
 
