@@ -1,3 +1,8 @@
+### StringOrInteger - Abstract type union
+
+typealias StringOrInteger Union{AbstractString, Integer}
+
+
 ### SnpData - SNP allele data, [ind x snp] array
 
 typealias SnpData Matrix{Int8}
@@ -7,13 +12,14 @@ typealias SnpData Matrix{Int8}
 #   2 = AB | BA
 #   3 = BB
 
+
 ### LocusInfo - Locus attributes
 
 type LocusInfo{
-        S<:Union{AbstractString, Integer}, 
-        C<:Union{AbstractString, Integer}, 
+        S<:StringOrInteger,
+        C<:StringOrInteger,
         T<:Integer,
-        A<:Union{AbstractString, Integer} 
+        A<:StringOrInteger
     }
     
     locusid::Vector{S}
@@ -28,7 +34,7 @@ end
 ### SnpMatrix - SNP data and information
 
 type SnpMatrix{
-        I<:Union{AbstractString, Integer}
+        I<:StringOrInteger
     }
     
     data::SnpData
