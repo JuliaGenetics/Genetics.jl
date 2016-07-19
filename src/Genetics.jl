@@ -5,6 +5,7 @@ module Genetics
     include("types.jl")
     include("io.jl")
     include("attributes.jl")
+    include("stats.jl")
 
     export
 
@@ -16,6 +17,10 @@ module Genetics
         read_vcf,
 
         # object attribute functions
-        size
+        size,
+
+        # stats functions
+        allelefreq,
+        minor
 
 end # module
